@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <!-- Gestione nuova Task -->
+      <img src="boolean-logo.png" alt="logo boolean" />
+      <div class="new-task">
+        <input
+          type="text"
+          placeholder="Aggiungi Task"
+          v-model="message"
+          @keyup.enter="addTask"
+        />
+        <button @click="addTask">Aggiungi</button>
+      </div>
+
+      <!-- Output tasks -->
+      <div class="container-tasks">
+        <ul v-if="todos.length > 0">
+          <li
+            class="task"
+            v-for="(task, index) in todos"
+            :key="index"
+            :class="{'done': task.done}"
+          >
+            {{task.text}}
+            <i class="fa-solid fa-xmark" @click="delTask(i)"></i>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
