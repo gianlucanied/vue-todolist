@@ -5,9 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To-Do List</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   </head>
   <body>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <div id="app">
+      <!-- Gestione nuova Task -->
+      <div class="new-task">
+        <input type="text" placeholder="Aggiungi Task" v-model="message" />
+        <button @click="addTask">Aggiungi</button>
+      </div>
+
+      <!-- Output tasks -->
+      <div class="container-tasks">
+        <ul v-if="todos.length > 0">
+          <li class="task" v-for="task in todos" :key="i">{{task.text}}</li>
+        </ul>
+      </div>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
