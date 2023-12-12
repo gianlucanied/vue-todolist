@@ -19,6 +19,7 @@ Partite comunque con un layout super essenziale, così da non perderci troppo te
 Qui sotto vi metto anche un esempio dell’array di oggetti che userete nella vostra App di ToDo.
 Ricordatevi la differenza in quello che si ottiene ad associare un valore basico Vs. assegnare un valore complesso (oggetto/array) ad una variabile/proprietà, potrebbe salvarvi tempo :occhiolino: .
 Buon lavoro e buon divertimento! */
+
 const { createApp } = Vue;
 
 createApp({
