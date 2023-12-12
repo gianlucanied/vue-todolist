@@ -18,7 +18,14 @@
       <!-- Output tasks -->
       <div class="container-tasks">
         <ul v-if="todos.length > 0">
-          <li class="task" v-for="task in todos" :key="i">{{task.text}}</li>
+          <li
+            class="task"
+            v-for="(task, index) in todos"
+            :key="index"
+            :class="{ 'done': task.done}"
+          >
+            {{task.text}}
+          </li>
         </ul>
       </div>
     </div>
