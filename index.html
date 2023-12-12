@@ -15,7 +15,12 @@
     <div id="app">
       <!-- Gestione nuova Task -->
       <div class="new-task">
-        <input type="text" placeholder="Aggiungi Task" v-model="message" />
+        <input
+          type="text"
+          placeholder="Aggiungi Task"
+          v-model="message"
+          @keyup.enter="addTask"
+        />
         <button @click="addTask">Aggiungi</button>
       </div>
 
@@ -26,7 +31,7 @@
             class="task"
             v-for="(task, index) in todos"
             :key="index"
-            :class="{ 'done': task.done}"
+            :class="{'done': task.done}"
           >
             {{task.text}}
             <i class="fa-solid fa-xmark" @click="delTask(i)"></i>
